@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manual Completo do TDAH – por Marco Quitério</title>
+  <meta name="description" content="Landing page moderna do ebook Manual Completo do TDAH, por Marco Quitério. Estratégias práticas, ferramentas e guias para transformar sua rotina com foco e organização." />
+  <meta name="author" content="Marco Quitério" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Manual Completo do TDAH – por Marco Quitério" />
+  <meta property="og:description" content="Guia prático e direto para foco, organização e bem‑estar. Baixe agora em PDF." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Manual+Completo+do+TDAH" />
+  <meta property="og:locale" content="pt_BR" />
+  <style>
+    :root{
+      --bg:#0b1220;        /* fundo escuro elegante */
+      --card:#10192f;
+      --muted:#7e8aa0;
+      --text:#eaf2ff;
+      --brand:#5b8cff;     /* cor principal */
+      --brand-2:#9ad1ff;   /* cor gradiente */
+      --accent:#24e1c6;    /* cor destaque */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 90% -10%, rgba(36,225,198,0.15), transparent 60%),
+                                              radial-gradient(900px 500px at -10% 10%, rgba(91,140,255,0.18), transparent 60%),
+                                              var(--bg);
+              color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px, 92vw);margin-inline:auto}
+    .btn{--h:54px;display:inline-flex;align-items:center;justify-content:center;height:var(--h);padding:0 22px;border-radius:12px;font-weight:700;letter-spacing:.2px;border:1px solid transparent;transition:.25s transform, .25s box-shadow, .25s background;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0f1a;box-shadow:0 10px 24px rgba(91,140,255,.35)}
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(91,140,255,.45)}
+    .btn.ghost{border-color:#2a3550;background:rgba(16,25,47,.6)}
+    .chip{display:inline-flex;gap:.6rem;align-items:center;padding:.35rem .75rem;border-radius:999px;font-size:.82rem;background:rgba(154,209,255,.15);border:1px solid rgba(154,209,255,.25);color:var(--brand-2)}
+    .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:rgba(11,18,32,.65);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:.75rem;align-items:center;font-weight:800}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--brand));box-shadow:var(--shadow)}
+    .nav a{opacity:.9}
+    .nav a:hover{opacity:1}
+    .menu{display:flex;gap:1.2rem}
+
+    /* Hero */
+    .hero{padding:64px 0 24px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+    .hero h1{font-size:clamp(1.9rem, 3.2vw + 1rem, 3rem);line-height:1.15;margin:.35rem 0 .75rem}
+    .hero p{color:var(--muted);font-size:1.05rem}
+    .hero-card{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .book{background:linear-gradient(160deg,#0d1730, #0b1220 60%);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .book .cover{aspect-ratio:4/5;border-radius:12px;background:linear-gradient(135deg,var(--brand) 10%, var(--accent) 90%);display:grid;place-items:center;font-weight:800;color:#0b0f1a}
+    .book small{color:var(--muted)}
+
+    /* Social proof */
+    .badges{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
+    .badge{padding:.5rem .75rem;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.02);color:var(--muted);font-size:.9rem}
+
+    /* Sections */
+    section{padding:74px 0;border-top:1px solid rgba(255,255,255,.06)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+    .card{background:linear-gradient(160deg,#0d1730, #0b1220 70%);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 .35rem}
+    .card p{color:var(--muted);margin:0}
+
+    /* Split section */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .list{display:grid;gap:12px}
+    .list li{background:rgba(91,140,255,.08);border:1px solid rgba(91,140,255,.18);padding:12px 14px;border-radius:12px}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+    .price-card{position:relative}
+    .price-card.popular{outline:2px solid rgba(36,225,198,.6)}
+    .price{font-size:2rem;font-weight:900}
+    .cta-wrap{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+
+    /* Testemunhos */
+    .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .t{background:linear-gradient(160deg,#0d1730, #0b1220 70%);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px}
+    .t p{color:var(--muted)}
+
+    /* FAQ */
+    details{background:#0d1730;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px}
+    details+details{margin-top:12px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* Footer */
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06);text-align:center}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-grid{grid-template-columns:1fr}
+      .features,.pricing,.testis,.split{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <span class="logo"></span>
+        <span>Manual do TDAH</span>
+      </a>
+      <div class="menu">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#preco">Oferta</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn primary" href="#preco">Quero meu ebook</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="chip">📘 Ebook • PDF imediato</span>
+        <h1>Manual Completo do TDAH<br/>para foco, organização e bem‑estar</h1>
+        <p>Escrito por <strong>Marco Quitério</strong>, este guia prático mostra como entender o TDAH e aplicar estratégias simples que funcionam na escola, no trabalho e em casa.</p>
+        <div class="hero-card">
+          <a class="btn primary" href="#preco">Comprar agora</a>
+          <a class="btn ghost" href="#conteudo">Ver o que tem dentro</a>
+        </div>
+        <div class="badges">
+          <div class="badge">✅ Acesso imediato</div>
+          <div class="badge">✅ +50 páginas</div>
+          <div class="badge">✅ Atualizado</div>
+        </div>
+      </div>
+      <div class="book">
+        <div class="cover">
+          <div>
+            <div style="font-size:22px">Manual do TDAH</div>
+            <div style="opacity:.8;font-weight:700;margin-top:6px">Marco Quitério</div>
+          </div><div class="hero-image">
+  <img src="piclumen-1756066360896" alt="Manual do TDAH - Marco Quitério" style="max-width:100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.4);">
+</div>
+
+        </div>
+        <div style="margin-top:14px">
+          <small>Versão digital (PDF) • Leitura em qualquer dispositivo</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFÍCIOS -->
+  <section id="beneficios">
+    <div class="container">
+      <h2>Por que este ebook é diferente?</h2>
+      <div class="features">
+        <div class="card">
+          <h3>Clareza sem jargões</h3>
+          <p>Explicações diretas sobre TDAH, sintomas, diagnóstico e convivência – para leigos e profissionais.</p>
+        </div>
+        <div class="card">
+          <h3>Aplicável na prática</h3>
+          <p>Ferramentas, rotinas e checklists para usar hoje – na escola, no trabalho e em casa.</p>
+        </div>
+        <div class="card">
+          <h3>Bem‑estar em foco</h3>
+          <p>Estratégias para reduzir estresse, aumentar o foco e melhorar a autoestima.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <section id="conteudo">
+    <div class="container split">
+      <div>
+        <h2>O que você vai encontrar</h2>
+        <ul class="list">
+          <li>Introdução ao TDAH, sintomas e tipos</li>
+          <li>Como é feito o diagnóstico e o acompanhamento</li>
+          <li>Estratégias para escola, trabalho e vida adulta</li>
+          <li>Procrastinação, foco, rotina e organização</li>
+          <li>Autocuidado, emoções e relações saudáveis</li>
+          <li>Ferramentas digitais e técnicas de produtividade</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Para quem é</h3>
+        <p>Para pessoas com TDAH, pais, educadores e profissionais que buscam um material direto ao ponto, confiável e prático.</p>
+        <h3 style="margin-top:16px">Sobre o autor</h3>
+        <p><strong>Marco Quitério</strong> escreve sobre desenvolvimento pessoal e educação prática. Seu objetivo é transformar conhecimento em rotinas simples e eficazes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇO / OFERTA -->
+  <section id="preco">
+    <div class="container">
+      <h2>Escolha seu acesso</h2>
+      <div class="pricing">
+        <div class="card price-card">
+          <h3>Ebook PDF</h3>
+          <div class="price">€5,99</div>
+          <p style="color:var(--muted);margin:.35rem 0 0">Acesso imediato • atualizações futuras</p>
+          <div class="cta-wrap">
+            <!-- Substitua o link abaixo pelo seu checkout da Hotmart -->
+            <a class="btn primary" href="https://pay.hotmart.com/I101553736H" target="_blank" rel="noopener">Comprar na Hotmart</a>
+            <a class="btn ghost" href="#faq">Tenho dúvidas</a>
+          </div>
+        </div>
+        <div class="card price-card popular">
+          <h3>Ebook + Bônus</h3>
+          <div class="price">€9.99</div>
+          <p style="color:var(--muted);margin:.35rem 0 0">Checklist de hábitos + calendário de organização</p>
+          <div class="cta-wrap">
+            <a class="btn primary" href="https://pay.hotmart.com/I101553736H?off=rpr0ab3p" target="_blank" rel="noopener">Garantir meu pacote</a>
+            <a class="btn ghost" href="#faq">Ver detalhes</a>
+          </div>
+        </div>
+        <div class="card price-card">
+          <h3>Licença Escola</h3>
+          <div class="price">€ 19,99</div>
+          <p style="color:var(--muted);margin:.35rem 0 0">Uso interno para equipes pedagógicas</p>
+          <div class="cta-wrap">
+            <a class="btn primary" href="https://pay.hotmart.com/I101553736H?off=rvw39sea" target="_blank" rel="noopener">Solicitar</a>
+            <a class="btn ghost" href="#contato">Falar com autor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section>
+    <div class="container">
+      <h2>O que leitores dizem</h2>
+      <div class="testis">
+        <div class="t">
+          <p>“Conteúdo direto e aplicável. Em uma semana consegui ajustar minha rotina de estudos.”</p>
+          <strong>— Ana S.</strong>
+        </div>
+        <div class="t">
+          <p>“Como professora, usei várias estratégias em sala de aula e já vejo melhora na atenção dos alunos.”</p>
+          <strong>— Profª Daniela</strong>
+        </div>
+        <div class="t">
+          <p>“Material essencial para quem convive com TDAH. Recomendo para famílias e adultos.”</p>
+          <strong>— Rafael M.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+      <details>
+        <summary>Como recebo o ebook?</summary>
+        <p>Após a compra na Hotmart, o acesso ao PDF é liberado imediatamente em sua conta e por e‑mail.</p>
+      </details>
+      <details>
+        <summary>Posso ler no celular?</summary>
+        <p>Sim. O PDF é responsivo e pode ser lido em celular, tablet e computador.</p>
+      </details>
+      <details>
+        <summary>Há garantia?</summary>
+        <p>Sim, siga a política de garantia da Hotmart para reembolso dentro do prazo informado na plataforma.</p>
+      </details>
+      <details>
+        <summary>Receberei atualizações?</summary>
+        <p>Você terá acesso às atualizações de conteúdo desta edição sem custo adicional.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTATO / FOOTER -->
+  <section id="contato">
+    <div class="container">
+      <h2>Fale com o autor</h2>
+      <p>Dúvidas sobre o conteúdo ou parcerias de divulgação? Envie uma mensagem.</p>
+      <div class="cta-wrap">
+        <a class="btn ghost" href="marqit001@hotmail.com">contato@seudominio.com</a>
+        <a class="btn primary" href="#preco">Quero meu ebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Manual Completo do TDAH · Marco Quitério. Todos os direitos reservados.</p>
+      <p style="margin-top:8px;font-size:.9rem">Este site não substitui aconselhamento médico, psicológico ou educacional profissional.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
